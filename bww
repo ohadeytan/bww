@@ -1,0 +1,5 @@
+status=$(bw status)
+if [[ "$status" == *unauthenticated\"} ]]; then
+    login=$(bw login);
+fi
+bw $@
