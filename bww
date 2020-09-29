@@ -1,5 +1,7 @@
+pass_session=''
 status=$(bw status)
 if [[ "$status" == *unauthenticated\"} ]]; then
-    login=$(bw login);
+    session_key=$(bw login);
+    pass_session=" --session $pass_session"
 fi
-bw $@
+bw $@ $pass_session
